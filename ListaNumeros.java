@@ -38,8 +38,21 @@ public class ListaNumeros
      */
     public boolean addElemento(int numero)
     {
-        
-        return true;
+        boolean esta = false;
+
+        if(pos + 1 <= TAM_LISTA){
+            for(int i = 0; i < pos; i++){
+                esta = numero == numeros[i];
+            }
+
+            if (!esta){
+                numeros[pos + 1] = numero;
+                pos++;
+            } else{
+                return false;
+            }
+        }
+        return esta;
 
     }
 
@@ -48,8 +61,8 @@ public class ListaNumeros
      */
     public boolean estaCompleta()
     {
-        return true;
-
+       
+        return pos == TAM_LISTA ;
     }
 
     /**
@@ -57,7 +70,8 @@ public class ListaNumeros
      */
     public boolean estaVacia() 
     {
-        return true;
+        
+        return pos == 0;
 
     }
 
@@ -66,7 +80,7 @@ public class ListaNumeros
      */
     public int getTotalNumeros()
     {
-        return 0;
+        return pos;
 
     }
 
@@ -75,7 +89,7 @@ public class ListaNumeros
      */
     public void vaciarLista() 
     {
-        
+        pos = 0;
     }
 
     /**
@@ -84,7 +98,10 @@ public class ListaNumeros
      */
     public boolean estaElemento(int numero) 
     {
-        
+        boolean esta = false;
+        for(int i=0; i < pos; i++){
+            esta = numero == numeros[i];
+        }
         return false;
     }
 
@@ -97,7 +114,7 @@ public class ListaNumeros
      */
     public String toString() 
     {
-        
+
         return null;
     }
 
@@ -122,7 +139,6 @@ public class ListaNumeros
      * (ver detalles en el enunciado)
      */
     public int[] expandir() {
-         
 
         return null;
     }
@@ -145,11 +161,9 @@ public class ListaNumeros
      *  después de reorganizarParesImpares() quedaría {4, 2, 8, 3, 7, 9, 5, 11, 13}
      */
     public void reorganizarParesImpares() {
-         
 
     }
 
-     
     /**
      *  Usando métodos de la clase Arrays haz una copia 
      *  de numeros al tamaño indicado por su longitud lógica
@@ -158,7 +172,7 @@ public class ListaNumeros
      *  que incluya los elementos del array ordenado
      */
     public ListaNumeros nuevaLista() {
-         
+
         return null;
 
     }
@@ -176,7 +190,7 @@ public class ListaNumeros
      */
     public int[][] toArray2D() 
     {
-        
+
         return null;
     }
 
@@ -200,8 +214,6 @@ public class ListaNumeros
         int[] expandido = numeros.expandir();
         System.out.println("Expandido: " + Arrays.toString(expandido));
         // seguir completando
-        
-        
-        
+
     }
 }
