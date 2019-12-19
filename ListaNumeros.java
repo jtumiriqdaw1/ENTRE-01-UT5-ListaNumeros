@@ -178,7 +178,15 @@ public class ListaNumeros
      *  después de reorganizarParesImpares() quedaría {4, 2, 8, 3, 7, 9, 5, 11, 13}
      */
     public void reorganizarParesImpares() {
-
+        for(int i = 0; i < pos; i++){
+            if (esImpar(numeros[i])){
+                i++;
+            }
+            else {
+                i++;
+            
+            }
+        }
     }
 
     /**
@@ -191,8 +199,14 @@ public class ListaNumeros
     public ListaNumeros nuevaLista() {
        int[] copia = Arrays.copyOf(numeros, pos);
        Arrays.sort(copia);
-       
-         
+       // ListaNumeros numeros = new otraLista();
+    
+       // for(int i = 0; i < pos; i++){
+           
+        
+        
+        
+        // }
         
         
         return null;
