@@ -114,8 +114,17 @@ public class ListaNumeros
      */
     public String toString() 
     {
-
-        return null;
+        String str = "";
+        boolean hayNumeros = true;
+        for(int i = 0; i < numeros.length; i++){
+            if (!hayNumeros) {
+                System.out.println("| |");
+            }
+            else {
+                str = "| " + numeros[i] + " ";
+            }
+        }
+        return str;
     }
 
     /**
@@ -139,7 +148,8 @@ public class ListaNumeros
      * (ver detalles en el enunciado)
      */
     public int[] expandir() {
-
+        
+        
         return null;
     }
 
@@ -190,7 +200,7 @@ public class ListaNumeros
      */
     public int[][] toArray2D() 
     {
-
+            
         return null;
     }
 
