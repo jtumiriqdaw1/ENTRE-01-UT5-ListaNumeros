@@ -13,6 +13,7 @@ public class ListaNumeros
     public static final int TAM_LISTA = 16;
     private int[] numeros;  
     private int pos;  
+    private int[][] matriz;
     
     
     /**
@@ -123,11 +124,12 @@ public class ListaNumeros
         boolean hayNumeros = true;
         for(int i = 0; i < numeros.length; i++){
             if (!hayNumeros) {
-                System.out.println("| |");
+               System.out.println("| |");
             }
             else {
-                str = "| " + numeros[i] + " ";
+                str += numeros[i] + "|" ;
             }
+            
         }
         return str;
     }
@@ -187,7 +189,12 @@ public class ListaNumeros
      *  que incluya los elementos del array ordenado
      */
     public ListaNumeros nuevaLista() {
-
+       int[] copia = Arrays.copyOf(numeros, pos);
+       Arrays.sort(copia);
+       
+         
+        
+        
         return null;
 
     }
@@ -205,8 +212,16 @@ public class ListaNumeros
      */
     public int[][] toArray2D() 
     {
-            
-        return null;
+        matriz = new int[4][4];
+        pos = 0;
+        for(int f= 0; f < matriz.length; f++){
+            for(int c = 0; c < matriz[f].length; c++){
+             matriz[f][c] += numeros[pos];
+           
+            }
+        }
+        
+        return matriz;
     }
 
     /**
