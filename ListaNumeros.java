@@ -13,7 +13,8 @@ public class ListaNumeros
     public static final int TAM_LISTA = 16;
     private int[] numeros;  
     private int pos;  
-
+    
+    
     /**
      * Constructor de la clase ListaNumeros 
      * Crea e inicializa adecuadamente los
@@ -23,10 +24,12 @@ public class ListaNumeros
      */
     public ListaNumeros(int n) 
     {
+        numeros = new int[n];
         if (n > TAM_LISTA) {
             throw new IllegalArgumentException("Valor no permitido para tamaño lista");
         }
-        // completar
+        pos = 0;
+        
     }
 
     /**
@@ -46,7 +49,7 @@ public class ListaNumeros
             }
 
             if (!esta){
-                numeros[pos + 1] = numero;
+                numeros[pos] = numero;
                 pos++;
             } else{
                 return false;
@@ -61,7 +64,6 @@ public class ListaNumeros
      */
     public boolean estaCompleta()
     {
-       
         return pos == TAM_LISTA ;
     }
 
@@ -70,9 +72,7 @@ public class ListaNumeros
      */
     public boolean estaVacia() 
     {
-        
         return pos == 0;
-
     }
 
     /**
@@ -98,11 +98,16 @@ public class ListaNumeros
      */
     public boolean estaElemento(int numero) 
     {
-        boolean esta = false;
-        for(int i=0; i < pos; i++){
-            esta = numero == numeros[i];
-        }
-        return false;
+         int i = 0;
+         while(i < pos){
+           if(numeros[i] == numero){
+              return true;
+             }
+           else{
+                 i++;
+           }
+            }
+         return false;
     }
 
     /**
